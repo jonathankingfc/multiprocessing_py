@@ -5,7 +5,7 @@ import numpy as np
 
 
 def my_sort(arr_size, num_arrays, sort_type):
-    for i in range(num_arrays):
+    for i in range((int(num_arrays))):
         arr = np.random.rand(arr_size)
         np.sort(arr, kind=sort_type)
 
