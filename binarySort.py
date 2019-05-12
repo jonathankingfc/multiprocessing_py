@@ -46,9 +46,3 @@ def threading_test(num_arrays, num_threads, arr_size, sort_type):
     print("Time: {}\n".format(end-start))
 
 
-threading_test(100000, 1, 10000, "quicksort")
-threading_test(100000, 5, 10000, "quicksort")
-threading_test(100000, 10, 10000, "quicksort")
-mp_test(100000, 1, 10000, "quicksort")
-mp_test(100000, 5, 10000, "quicksort")
-mp_test(100000, 10, 10000, "quicksort")
