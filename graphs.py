@@ -1,14 +1,16 @@
 # libraries and data
 import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
 import time
 import webScraping
 import calculatePrime
 import compression
+import matplotlib
+matplotlib.use("AGG")
 
 
 def lineGraph():
+
     webScrapingTimes = [webScraping.main(n) for n in range(1, 2)]
     calculatePrimeTimes = [calculatePrime.main(n) for n in range(1, 2)]
     compressionTimes = [compression.main(n) for n in range(1, 2)]
@@ -17,14 +19,13 @@ def lineGraph():
     #compressionTimes = [1.0769598484039307, 1.1976118087768555, 1.461094617843628, 1.6775343418121338]
 
     # Make a data frame
-    df = pd.DataFrame({'Milliseconds': range(1, 5), 'Web Scraping': webScrapingTimes,
+    df = pd.DataFrame({'Processes': range(1, 2), 'Web Scraping': webScrapingTimes,
                        'Calculating Primes': calculatePrimeTimes, 'Compression Times': compressionTimes})
 
     plt.style.use('seaborn-darkgrid')
 
     # create a color palette
     palette = plt.get_cmap('Set1')
-
     # multiple line plot
     num = 0
     for column in df.drop('Milliseconds', axis=1):
