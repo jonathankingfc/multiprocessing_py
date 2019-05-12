@@ -60,4 +60,5 @@ def getWeather(city, url):
     weather_stuff.to_csv(city+".csv")
 
 
-main()
+if __name__ == "__main__":
+    print("hello from webScraping")

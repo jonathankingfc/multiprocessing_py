@@ -14,9 +14,9 @@ def main():
             "Lion King": "compressionExamples/LionKing",
             "Tarzan": "compressionExamples/Tarzan",
             "The Little Mermaid": "compressionExamples/TheLittleMermaid"}
-    how_many = 100
-    p = Pool(processes=how_many)
-    # print(list(dict.items()))
+
+    num_process = int(input("How many processes would you like to create?"))
+    p = Pool(processes=num_process)
     data = p.starmap(compress, list(dict.items()))
     p.close()
 
@@ -32,9 +32,3 @@ def compress(name, path_to_file):
     decompressed = zlib.decompress(compressedText)
 
     print("Decompressed {}!".format(name))
-
-
-if __name__ == '__main__':
-    start_time = time.time()
-    main()
-    print("time taken", time.time() - start_time, "to run")

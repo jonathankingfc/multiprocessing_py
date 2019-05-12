@@ -2,6 +2,7 @@ import time
 import multiprocessing
 import numpy as np
 
+
 def calculatePrimes(upperBound):
 
     start = time.time()
@@ -23,6 +24,3 @@ def isPrime(n):
             isPrime = False
             break
     return isPrime
-
-
-print(calculatePrimes(1000000))
