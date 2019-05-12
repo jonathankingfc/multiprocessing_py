@@ -6,7 +6,6 @@ import webScraping
 import calculatePrime
 import compression
 import matplotlib
-matplotlib.use("AGG")
 
 
 def lineGraph():
@@ -20,7 +19,7 @@ def lineGraph():
     #compressionTimes = [1.0769598484039307, 1.1976118087768555, 1.461094617843628, 1.6775343418121338]
 
     # Make a data frame
-    df = pd.DataFrame({'Milliseconds': range(1, 2), 'Web Scraping': webScrapingTimes,
+    df = pd.DataFrame({'Milliseconds': range(1, 5), 'Web Scraping': webScrapingTimes,
                        'Calculating Primes': calculatePrimeTimes, 'Compression Times': compressionTimes})
 
     plt.style.use('seaborn-darkgrid')
