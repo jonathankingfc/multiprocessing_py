@@ -23,7 +23,10 @@ def main():
             "8. Quit Program\n"
             "Selection: "
         ))
-
+        while(not (str.isdigit(option))):
+			option = input("Please enter a valid number: ")
+		
+		option = int(option)
         if option == 1:
             print("\nWelcome to the Web Scraping Test!")
             print(
@@ -81,6 +84,10 @@ def main():
         elif option == 6:
             print(
                 "We will export the graph as a png in the current directoy. This may take some time!")
+            graphs.lineGraph()
+            webScraping.clean()
+            calculatePrime.clean()
+            compression.clean()
         elif option == 7:
             webScraping.clean()
             calculatePrime.clean()
