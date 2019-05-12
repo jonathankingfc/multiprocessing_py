@@ -17,12 +17,15 @@ def main(num_process):
     clean()
     os.mkdir("weatherCSVs")
 
+    print("work")
     start = time.time()
     p = Pool(processes=num_process)
+
     p.starmap(getWeather, list(cities.items()))
     p.close()
     p.join()
     end = time.time()
+    print("work")
 
     duration = end-start
 
@@ -30,6 +33,7 @@ def main(num_process):
 
 
 def getWeather(city, url):
+    print("b")
     page = requests.get(url)
     soup = BeautifulSoup(page.content, "html.parser")
 

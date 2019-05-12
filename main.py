@@ -6,27 +6,29 @@ import argparse
 import sys
 import mysort
 import graphs
+import fibonacci
 
 
 def main():
     print("\n================================================================================\nWelcome to our program! We will be testing the multiprocessing module on various workloads.")
     while(True):
-        option = int(input(
+        option = (input(
             "\nPlease select from the following: \n"
             "1. Web Scraping\n"
             "2. Calculating Primes\n"
             "3. Compressing Text Files\n"
             "4. Encoding Image Files\n"
             "5. Sorting Integer Lists\n"
-            "6. Show Graph\n"
-            "7. Clean Workspace\n"
-            "8. Quit Program\n"
+            "6. Fibonacci\n"
+            "7. Show Graph\n"
+            "8. Clean Workspace\n"
+            "9. Quit Program\n"
             "Selection: "
         ))
         while(not (str.isdigit(option))):
-			option = input("Please enter a valid number: ")
+            option = input("Please enter a valid number: ")
 
-		option = int(option)
+        option = int(option)
         if option == 1:
             print("\nWelcome to the Web Scraping Test!")
             print(
@@ -82,18 +84,30 @@ def main():
                 print("Test took {} seconds with {} processes".format(
                     time_elapsed, n))
         elif option == 6:
+            print("\nWelcome to the Fibonacci Test!")
+            print(
+                "Here we will be \n")
+            num_process = getNumProcess()
+            print("\n")
+            for n in num_process:
+                time_elapsed = fibonacci.main(n)
+                print("Test took {} seconds with {} processes".format(
+                    time_elapsed, n))
+        elif option == 7:
             print(
                 "We will export the graph as a png in the current directoy. This may take some time!")
             graphs.lineGraph()
             webScraping.clean()
             calculatePrime.clean()
             compression.clean()
-        elif option == 7:
+            print("The png has been generated. Check the cwd!")
+        elif option == 8:
             webScraping.clean()
             calculatePrime.clean()
             compression.clean()
+            fibonacci.clean()
             print("Workspace has been cleaned!")
-        elif option == 8:
+        elif option == 9:
             print("Thank you for using our program!")
             sys.exit(0)
         else:
