@@ -58,7 +58,3 @@ def getWeather(city, url):
 def clean():
     if(os.path.isdir(os.getcwd()+"/weatherCSVs")):
         shutil.rmtree(os.getcwd()+"/weatherCSVs")
-
-
-if __name__ == "__main__":
-    print("hello from webScraping")

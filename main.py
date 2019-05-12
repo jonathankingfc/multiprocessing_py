@@ -1,10 +1,11 @@
 import webScraping
 import calculatePrime
-import binarySort
 import compression
 import encoding
 import argparse
 import sys
+import mysort
+import graphs
 
 
 def main():
@@ -16,9 +17,10 @@ def main():
             "2. Calculating Primes\n"
             "3. Compressing Text Files\n"
             "4. Encoding Image Files\n"
-            "5. Sorting Algorithms\n"
+            "5. Sorting Integer Lists\n"
             "6. Show Graph\n"
-            "7. Quit Program\n"
+            "7. Clean Workspace\n"
+            "8. Quit Program\n"
             "Selection: "
         ))
 
@@ -56,12 +58,35 @@ def main():
                     time_elapsed, n))
 
         elif option == 4:
-            encoding.main()
+            print("\nWelcome to the Encoding Test!")
+            print(
+                "Here we will be pulling images from Reddit and encoding them with unidecode!\n")
+            num_process = getNumProcess()
+            print("\n")
+            for n in num_process:
+                time_elapsed = encoding.main(n)
+                print("Test took {} seconds with {} processes".format(
+                    time_elapsed, n))
+
         elif option == 5:
-            print("selected Option 5")
+            print("\nWelcome to the Sorting Test!")
+            print(
+                "Here we will be \n")
+            num_process = getNumProcess()
+            print("\n")
+            for n in num_process:
+                time_elapsed = mysort.main(n)
+                print("Test took {} seconds with {} processes".format(
+                    time_elapsed, n))
         elif option == 6:
-            print("selected Option 6")
+            print(
+                "We will export the graph as a png in the current directoy. This may take some time!")
         elif option == 7:
+            webScraping.clean()
+            calculatePrime.clean()
+            compression.clean()
+            print("Workspace has been cleaned!")
+        elif option == 8:
             print("Thank you for using our program!")
             sys.exit(0)
         else:

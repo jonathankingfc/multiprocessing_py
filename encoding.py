@@ -10,8 +10,22 @@ import time
 import os
 import unidecode
 import base64
-
 from random import randint
+
+
+def main(num_process):
+    urls = get_headlines()
+
+    start = time.time()
+    p = Pool(processes=num_process)
+    p.map(getEncoded, urls)
+    p.close()
+    p.join()
+    end = time.time()
+
+    duration = end - start
+
+    return duration
 
 
 def get_headlines():
@@ -29,24 +43,9 @@ def get_headlines():
               for listing in data['data']['children']]
     urls = []
     urls.append(titles)
-    # print(urls)
     return titles
 
 
 def getEncoded(url):
-    print("encoding {}".format(url))
     encoded = base64.b64encode(requests.get(url).content)
     return encoded
-
-
-def main(num_process):
-    urls = get_headlines()
-    how_many = 10
-    p = Pool(processes=how_many)
-    data = p.map(getEncoded, urls)
-
-
-if __name__ == '__main__':
-    start_time = time.time()
-    main()
-    print("time taken", time.time() - start_time, "to run")
