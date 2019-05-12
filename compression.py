@@ -27,7 +27,7 @@ def main():
             "Lion King": "compressionExamples/LionKing",
             "Tarzan": "compressionExamples/Tarzan",
             "The Little Mermaid": "compressionExamples/TheLittleMermaid"}
-    how_many = 1
+    how_many = 100
     p = Pool(processes=how_many)
     # print(list(dict.items()))
     data = p.starmap(compress, list(dict.items()))
