@@ -8,18 +8,22 @@ import compression
 import matplotlib
 import encoding
 import mysort
+import fibonacci
+
 
 def lineGraph():
 
-    webScrapingTimes = [webScraping.main(n) for n in [1,3,5,7,10,13,16]]
-    calculatePrimeTimes = [calculatePrime.main(n) for n in [1,3,5,7,10,13,16]]
-    compressionTimes = [compression.main(n) for n in [1,3,5,7,10,13,16]]
-    encodingTimes = [encoding.main(n) for n in [1,3,5,7,10,13,16]]
-    sortingTimes = [mysort.main(n) for n in [1,3,5,7,10,13,16]]
-    
+    webScrapingTimes = [webScraping.main(n) for n in [1, 3, 5, 7, 10, 13, 16]]
+    calculatePrimeTimes = [calculatePrime.main(
+        n) for n in [1, 3, 5, 7, 10, 13, 16]]
+    compressionTimes = [compression.main(n) for n in [1, 3, 5, 7, 10, 13, 16]]
+    encodingTimes = [encoding.main(n) for n in [1, 3, 5, 7, 10, 13, 16]]
+    sortingTimes = [mysort.main(n) for n in [1, 3, 5, 7, 10, 13, 16]]
+    fibonacciTimes = [fibonacci.main(n) for n in [1, 3, 5, 7, 10, 13, 16]]
+
     # Make a data frame
-    df = pd.DataFrame({'Seconds': [1,3,5,7,10,13,16], 'Web Scraping': webScrapingTimes,
-                       'Calculate Primes': calculatePrimeTimes, 'Compression': compressionTimes, 'Encoding':encodingTimes, 'Sorting': sortingTimes})
+    df = pd.DataFrame({'Seconds': [1, 3, 5, 7, 10, 13, 16], 'Web Scraping': webScrapingTimes,
+                       'Calculate Primes': calculatePrimeTimes, 'Compression': compressionTimes, 'Encoding': encodingTimes, 'Sorting': sortingTimes, "Fibonacci": fibonacciTimes})
 
     plt.style.use('seaborn-darkgrid')
 
