@@ -24,6 +24,8 @@ def main():
 
         if option == 1:
             print("\nWelcome to the Web Scraping Test!")
+            print(
+                "Here we will be using BeautifulSoup to CSV files container weekly weather for multiple cities!\n")
             num_process = getNumProcess()
             print("\n")
             for n in num_process:
@@ -32,9 +34,27 @@ def main():
                     time_elapsed, n))
 
         elif option == 2:
-            calculatePrime.main()
+            print("\nWelcome to the Prime Number Calculation Test!")
+            print(
+                "Here we will calculating the first million prime numbers\n")
+            num_process = getNumProcess()
+            print("\n")
+            for n in num_process:
+                time_elapsed = calculatePrime.main(n)
+                print("Test took {} seconds with {} processes".format(
+                    time_elapsed, n))
+
         elif option == 3:
-            compression.main()
+            print("\nWelcome to the File Compression Test!")
+            print(
+                "Here we will be compressing and uncompressing various Disney movie scripts using zlib!\n")
+            num_process = getNumProcess()
+            print("\n")
+            for n in num_process:
+                time_elapsed = compression.main(n)
+                print("Test took {} seconds with {} processes".format(
+                    time_elapsed, n))
+
         elif option == 4:
             encoding.main()
         elif option == 5:

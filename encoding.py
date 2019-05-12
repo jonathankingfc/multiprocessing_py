@@ -39,7 +39,7 @@ def getEncoded(url):
     return encoded
 
 
-def main():
+def main(num_process):
     urls = get_headlines()
     how_many = 10
     p = Pool(processes=how_many)

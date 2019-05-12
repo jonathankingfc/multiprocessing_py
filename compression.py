@@ -6,29 +6,47 @@ import string
 import time
 import zlib
 from random import randint
+import shutil
+import os
 
 
-def main():
-    dict = {"Aladdin": "compressionExamples/Aladdin",
-            "Beauty and the Beast": "compressionExamples/BeautyandtheBeast",
-            "Lion King": "compressionExamples/LionKing",
-            "Tarzan": "compressionExamples/Tarzan",
-            "The Little Mermaid": "compressionExamples/TheLittleMermaid"}
+def main(num_process):
+    movies = {"Aladdin": "testFiles/Aladdin",
+              "BeautyandtheBeast": "testFiles/BeautyandtheBeast",
+              "LionKing": "testFiles/LionKing",
+              "Tarzan": "testFiles/Tarzan",
+              "TheLittleMermaid": "testFiles/TheLittleMermaid"}
 
-    num_process = int(input("How many processes would you like to create?"))
+    clean()
+    os.mkdir("compressedFiles")
+    os.mkdir("uncompressedFiles")
+
+    start = time.time()
     p = Pool(processes=num_process)
-    data = p.starmap(compress, list(dict.items()))
+    p.starmap(compress, list(movies.items()))
     p.close()
+    p.join()
+
+    end = time.time()
+    duration = end - start
+
+    return duration
 
 
 def compress(name, path_to_file):
+
     text = open(path_to_file+".txt", "rb").read()
-    with open(path_to_file+".zlib", "wb") as myFile:
+    with open("compressedFiles/"+name+".zlib", "wb") as myFile:
         myFile.write(zlib.compress(text))
 
-    print("Compressed {}!".format(name))
+    compressedText = open("compressedFiles/"+name+".zlib", "rb").read()
 
-    compressedText = open(path_to_file+".zlib", "rb").read()
-    decompressed = zlib.decompress(compressedText)
+    with open("uncompressedFiles/"+name+".txt", "wb") as myFile:
+        myFile.write(zlib.decompress(compressedText))
 
-    print("Decompressed {}!".format(name))
+
+def clean():
+    if(os.path.isdir(os.getcwd()+"/compressedFiles")):
+        shutil.rmtree(os.getcwd()+"/compressedFiles")
+    if(os.path.isdir(os.getcwd()+"/uncompressedFiles")):
+        shutil.rmtree(os.getcwd()+"/uncompressedFiles")

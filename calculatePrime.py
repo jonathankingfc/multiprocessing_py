@@ -1,19 +1,23 @@
 import time
-import multiprocessing
-import numpy as np
+from multiprocessing import Pool
+import os
 
 
-def calculatePrimes(upperBound):
-
+def main(num_process):
     start = time.time()
-    primes = []
-    for n in range(2, upperBound + 1):
-        if isPrime(n):
-            primes.append(n)
-
+    p = Pool(processes=num_process)
+    result = p.map(isPrime, list(range(2, 1000000)))
+    p.close()
+    p.join()
     end = time.time()
+    prime_list = list(filter(None, result))  # fastest
 
-    return(len(primes), end-start)
+    with open('primeNumbers.txt', 'w') as f:
+        for prime in prime_list:
+            f.write("{}\n".format(prime))
+
+    duration = end-start
+    return duration
 
 
 def isPrime(n):
@@ -23,4 +27,12 @@ def isPrime(n):
         if n % num == 0:
             isPrime = False
             break
-    return isPrime
+    if isPrime:
+        return n
+    else:
+        return None
+
+
+def clean():
+    if os.path.exists("primeNumbers.txt"):
+        os.remove("primeNumbers.txt")
