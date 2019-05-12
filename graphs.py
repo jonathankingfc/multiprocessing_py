@@ -9,16 +9,22 @@ import compression
 
 
 def lineGraph():
-    webScrapingTimes = [webScraping.main(n) for n in range(1, 17)]
-    calculatePrimeTimes = [calculatePrime.main(n) for n in range(1, 17)]
-    compressionTimes = [compression.main(n) for n in range(1, 17)]
+    webScrapingTimes = [webScraping.main(n) for n in range(1, 2)]
+    calculatePrimeTimes = [calculatePrime.main(n) for n in range(1, 2)]
+    compressionTimes = [compression.main(n) for n in range(1, 2)]
 
     df = pd.DataFrame({'Web Scraping': webScrapingTimes,
                        'Calculating Primes': calculatePrimeTimes,
                        'Compressing Text': compressionTimes},
                       index=list(range(1, 17)))
 
-    df.plot.line()
+    ax = plt.gca()
+
+    df.plot(kind='line', x='name', y='num_children', ax=ax)
+    df.plot(kind='line', x='name', y='num_pets', color='red', ax=ax)
+
+    plt.savefig('foo.png')
+    plt.close
 
 #     # style
 #     plt.style.use('seaborn-darkgrid')
