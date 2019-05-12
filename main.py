@@ -25,7 +25,7 @@ def main():
         ))
         while(not (str.isdigit(option))):
 			option = input("Please enter a valid number: ")
-		
+
 		option = int(option)
         if option == 1:
             print("\nWelcome to the Web Scraping Test!")
