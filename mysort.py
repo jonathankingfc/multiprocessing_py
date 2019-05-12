@@ -4,7 +4,7 @@ import numpy as np
 
 
 def main(num_process):
-    arrays = [np.random.rand(100) for i in range(0, 1000)]
+    arrays = [np.random.rand(100) for i in range(0, 100000)]
 
     start = time.time()
     p = Pool(processes=num_process)
