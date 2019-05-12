@@ -2,7 +2,6 @@ import time
 import multiprocessing
 import numpy as np
 
-
 def calculatePrimes(upperBound):
 
     start = time.time()
