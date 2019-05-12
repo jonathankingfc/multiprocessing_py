@@ -12,3 +12,4 @@ __pycache__/
 weatherCSVs/
 compressedFiles/
 uncompressedFiles/
+*.png
