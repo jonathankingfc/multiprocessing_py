@@ -10,7 +10,8 @@ import fibonacci
 
 
 def main():
-    print("\n================================================================================\nWelcome to our program! We will be testing the multiprocessing module on various workloads.")
+    print("\n==========================================================================================="
+          "\nWelcome to our program! We will be testing the multiprocessing module on various workloads.")
     while(True):
         option = (input(
             "\nPlease select from the following: \n"
@@ -37,7 +38,7 @@ def main():
             print("\n")
             for n in num_process:
                 time_elapsed = webScraping.main(n)
-                print("Test took {} seconds with {} processes".format(
+                print("Test took {} seconds with {} processes.".format(
                     time_elapsed, n))
 
         elif option == 2:
@@ -48,7 +49,7 @@ def main():
             print("\n")
             for n in num_process:
                 time_elapsed = calculatePrime.main(n)
-                print("Test took {} seconds with {} processes".format(
+                print("Test took {} seconds with {} processes.".format(
                     time_elapsed, n))
 
         elif option == 3:
@@ -59,7 +60,7 @@ def main():
             print("\n")
             for n in num_process:
                 time_elapsed = compression.main(n)
-                print("Test took {} seconds with {} processes".format(
+                print("Test took {} seconds with {} processes.".format(
                     time_elapsed, n))
 
         elif option == 4:
@@ -70,32 +71,32 @@ def main():
             print("\n")
             for n in num_process:
                 time_elapsed = encoding.main(n)
-                print("Test took {} seconds with {} processes".format(
+                print("Test took {} seconds with {} processes.".format(
                     time_elapsed, n))
 
         elif option == 5:
             print("\nWelcome to the Sorting Test!")
             print(
-                "Here we will be sorting arrays of size 100000\n")
+                "Here we will be sorting arrays of size 100000!\n")
             num_process = getNumProcess()
             print("\n")
             for n in num_process:
                 time_elapsed = mysort.main(n)
-                print("Test took {} seconds with {} processes".format(
+                print("Test took {} seconds with {} processes.".format(
                     time_elapsed, n))
         elif option == 6:
             print("\nWelcome to the Fibonacci Test!")
             print(
-                "Here we will be recursively calculating the first 15 fibonacci numbers\n")
+                "Here we will be recursively calculating the first 15 fibonacci numbers!\n")
             num_process = getNumProcess()
             print("\n")
             for n in num_process:
                 time_elapsed = fibonacci.main(n)
-                print("Test took {} seconds with {} processes".format(
+                print("Test took {} seconds with {} processes.".format(
                     time_elapsed, n))
         elif option == 7:
             print(
-                "\nWe will export the graph as a png in the current directoy. This may take some time!")
+                "\nWe will export the graph as a png in the current directoy. This may take some time!\n")
             graphs.lineGraph()
             webScraping.clean()
             calculatePrime.clean()
@@ -111,7 +112,7 @@ def main():
             print("Thank you for using our program!")
             sys.exit(0)
         else:
-            print("Please enter a valid option")
+            print("Please enter a valid option!")
             continue
 
 
