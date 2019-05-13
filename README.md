@@ -12,7 +12,7 @@ Use Conda to enter into a Python 3.6 environment. On the iLab, this can be done 
 
 ### Step 2
 Navigate to the directory of main.py in the multiprocessing_py folder. Once here, you will see a requirements.txt file.
-Run the command: `conda install --file requirements.txt`
+Run the command: `conda install --file requirements.txt`. This may take a few minutes as it has to install a few dependencies. 
 
 ### Step 3
 Once the dependencies have been installed, you are ready to run the application. This is done by running: `python main.py`
