@@ -39,8 +39,8 @@ This test will sort 100000 arrays of size 100. The output is not stored.
 This test will find the first 15 fibonacci numbers in a recursive algorithm. The output is not stored. 
 
 ### Create Graph
-This function will run each test with 1-16 processes and will create a line graph showing the runtimes of each. This will be stored as a `.png` file in the root directory of the project
-
+This function will run each test with 1-16 processes and will create a line graph showing the runtimes of each. This will be stored as a `.png` file in the root directory of the project.
+NOTE: You many be unable to generate the `.png` through an ssh terminal. You will be required to connect to the iLab via x2go.
 ### Clean Workspace
 This function will delete all the files that were created as output during the previously listed tests.
 
