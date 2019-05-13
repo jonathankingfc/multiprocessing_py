@@ -1,35 +1,19 @@
 # multiprocessing_py
 Multiprocessing in Python 3 through different workloads
 
-Workloads:
+## How to Use
+The usage of this application is fairly simple. It is a simple CLI that takes user input in order to test through various workloads. One is also able to make a graph of the test results.
 
-The main benefit of multiprocessing is that it can take advantage of systems with multiple cores to speed up CPU-intensive programs. In our exploration of multiprocessing, we've selected several workloads that are particularly CPU-intensive. For easier comparison, we've divided them up into four categories - Web Scraping/Crawling, Mathematical Computations, Filo I/O, and General Computer Science Algorithms.
 
-Web Scraping / Crawling: 
+### Step 1
+Use Conda to enter into a Python 3.6 environment. On the iLab, this can be done by the following command: 
+`source activate python36`
 
-    Weather Scraping:
-    
-        PLACEHOLDER: Takes in a list of cities, and finds weather
-    Web Spyder: 
-    
-        PLACEHOLDER: Goes through a fuckton of links
-    Downloading Images:
-    
-Mathematical Computations:
+### Step 2
+Navigate to the directory of main.py in the multiprocessing_py folder. Once here, you will see a requirements.txt file.
+Run the command: `conda install --file requirements.txt`
 
-    Matrix Multiplication:
-    
-    Finding Primes:
-    
-   
-Filo I/O:
+### Step 3
+Once the dependencies have been installed, you are ready to run the application.
 
-    File Compression:
-    
-    Read / Write
-    
-General Computer Science Algorithms:
-
-    Sorting Algorithms:
-    
-
+Enjoy!!!
