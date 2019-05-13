@@ -16,4 +16,30 @@ Run the command: `conda install --file requirements.txt`
 ### Step 3
 Once the dependencies have been installed, you are ready to run the application. This is done by running: `python main.py`
 
-Enjoy!!!
+## Tests and Functions
+### Web Scraping
+This test will scrape weather from various cities. The information will be put into CSVs and stored into the weatherCSVs folder. 
+
+### Calculating Primes
+This test will calculate all of the prime numbers up until 100000. The numbers will be stored in the `primeNumbers.txt` file.
+
+### Compressing Text
+This test will compress and decompress several text files stored in `/testFiles/`. The compressed output files are put in `/compressedFiles` and once decompressed again will be put in the `/decompressedFiles` folder.
+
+### Encoding Images
+This test will grab images from Reddit and enconde them using Unidecode.
+
+### Sorting Integer List
+This test will sort 100000 arrays of size 100. The output is not stored.
+
+### Fibonacci
+This test will find the first 15 fibonacci numbers in a recursive algorithm. The output is not stored. 
+
+### Create Graph
+This function will run each test with 1-16 processes and will create a line graph showing the runtimes of each. This will be stored as a `.png` file in the root directory of the project
+
+### Clean Workspace
+This function will delete all the files that were created as output during the previously listed tests.
+
+### Quit Program
+This function will exit from the program
