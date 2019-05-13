@@ -76,7 +76,7 @@ def main():
         elif option == 5:
             print("\nWelcome to the Sorting Test!")
             print(
-                "Here we will be \n")
+                "Here we will be sorting arrays of size 100000\n")
             num_process = getNumProcess()
             print("\n")
             for n in num_process:
@@ -86,7 +86,7 @@ def main():
         elif option == 6:
             print("\nWelcome to the Fibonacci Test!")
             print(
-                "Here we will be \n")
+                "Here we will be recursively calculating the first 15 fibonacci numbers\n")
             num_process = getNumProcess()
             print("\n")
             for n in num_process:
@@ -95,12 +95,12 @@ def main():
                     time_elapsed, n))
         elif option == 7:
             print(
-                "We will export the graph as a png in the current directoy. This may take some time!")
+                "\nWe will export the graph as a png in the current directoy. This may take some time!")
             graphs.lineGraph()
             webScraping.clean()
             calculatePrime.clean()
             compression.clean()
-            print("The png has been generated. Check the cwd!")
+            print("The png has been generated. Check the cwd!\n")
         elif option == 8:
             webScraping.clean()
             calculatePrime.clean()
