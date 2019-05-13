@@ -4,7 +4,8 @@ Multiprocessing in Python 3 through different workloads
 ## How to Use
 The usage of this application is fairly simple. It is a simple CLI that takes user input in order to test through various workloads. The user can choose from various workloads and specify how many processes they would like to complete it on. The runtimes are they given. One is also able to make a graph of the test results. 
 
-
+### Step 0
+Type the following into your terminal: `export PATH="$PATH:/koko/system/anaconda/bin"`
 ### Step 1
 Use Conda to enter into a Python 3.6 environment. On the iLab, this can be done by the following command: 
 `source activate python36`
